@@ -19,6 +19,14 @@ class Timer extends Component {
       </section>
     );
   }
+  // why assign to variable?
+  componentDidMount(){
+    this.interval = setInterval(this.clockTick, 1000)
+  };
+
+  componentWillUnmount(){
+    clearInterval(this.interval);
+  };
 
   //clock functions
   clockTick = () => {
